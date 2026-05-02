@@ -5,7 +5,7 @@
 / {
     chosen {
         zmk,kscan = &mock_kscan;
-        zmk,physical-layout = &physical_layout0;  // New item added
+        zmk,matrix-transform = &default_transform;
     };
 
     mock_kscan: mock_kscan_0 {
@@ -31,7 +31,8 @@
     physical_layout0: physical_layout_0 {
         compatible = "zmk,physical-layout";
         display-name = "Default Layout";
-        transform = <&default_transform>;
+        kscan = <&kscan0>;
+        transform = <&matrix_transform0>;
 
         keys  //                     w   h    x    y     rot    rx    ry
             = <&key_physical_attrs 100 100    0   95       0     0     0>
@@ -69,5 +70,23 @@
             , <&key_physical_attrs 100 100  670  355 (-3000)   770   455>
             , <&key_physical_attrs 100 100  770  355 (-1500)   770   455>
             ;
+    };
+};
+
+&pro_micro_i2c {
+    status = "okay";
+    oled: sh1106@3c {
+        compatible = "sinowealth,sh1106";
+        reg = <0x3c>;
+        width = <129>;
+        height = <64>;
+        segment-offset = <1>;
+        page-offset = <0>;
+        display-offset = <0>;
+        multiplex-ratio = <63>; // 64-1 = 63
+        segment-remap;
+        com-invdir;
+        inversion-on;
+        prechargep = <0x22>;
     };
 };
