@@ -1,0 +1,17 @@
+
+config SHIELD_URCHIN_DONGLE
+    def_bool $(shields_list_contains,URCHIN_DONGLE)
+
+config SHIELD_URCHIN_LEFT
+    def_bool $(shields_list_contains,URCHIN_LEFT)
+
+config SHIELD_URCHIN_RIGHT
+    def_bool $(shields_list_contains,URCHIN_RIGHT)
+
+config SHIELD_URCHIN_LEFT_PERIPHERAL
+    def_bool $(shields_list_contains,URCHIN_LEFT_peripheral)
+
+# This sets the role automatically based on the shield name
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+    default y if SHIELD_URCHIN_LEFT || SHIELD_URCHIN_DONGLE
+    default n if SHIELD_URCHIN_LEFT_PERIPHERAL || SHIELD_URCHIN_RIGHT
