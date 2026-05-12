@@ -98,7 +98,7 @@
 
         bootloader {
             bindings = <&bootloader>;
-            key-positions = <2 3 4 4 6 5 7>;
+            key-positions = <30 31 32 33>;
         };
 
         tab {
