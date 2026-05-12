@@ -19,9 +19,9 @@ manifest:
       import: app/west.yml
     - name: urchin-zmk-module
       remote: duckyb
-      revision: v0.3.0
+      revision: main
     - name: hammerbeam-slideshow #new entry
       remote: gpeye #new entry
-      revision: v0.3.0
+      revision: main
   self:
     path: config
