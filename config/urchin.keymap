@@ -118,7 +118,12 @@
 
         enter {
             bindings = <&kp ENTER>;
-            key-positions = <6 7>;
+            key-positions = <18 19>;
+        };
+
+        reset {
+            bindings = <&sys_reset>;
+            key-positions = <0 1 8 9>;
         };
     };
 
@@ -130,30 +135,30 @@
         base {
             label = "BASE";
             bindings = <
-&kp Q  &kp W        &kp E         &kp R                 &kp T        &kp Y          &kp U             &kp I         &kp O        &kp P
-&kp A  &hml LALT S  &hml LCTRL D  &hml LEFT_GUI F       &kp G        &kp H          &hmr RIGHT_GUI J  &hmr RCTRL K  &hmr RALT L  &kp SEMI
-&kp Z  &kp X        &kp C         &kp V                 &kp B        &kp N          &kp M             &kp COMMA     &kp DOT      &kp FSLH
-                                  &sft_cw LEFT_SHIFT 0  &lt 1 SPACE  &kp BACKSPACE  &mo 2
+&kp Q  &kp W        &kp E         &kp R                 &kp T        &kp Y      &kp U             &kp I         &kp O        &kp P
+&kp A  &hml LALT S  &hml LCTRL D  &hml LEFT_GUI F       &kp G        &kp H      &hmr RIGHT_GUI J  &hmr RCTRL K  &hmr RALT L  &kp SEMI
+&kp Z  &kp X        &kp C         &kp V                 &kp B        &kp N      &kp M             &kp COMMA     &kp DOT      &kp FSLH
+                                  &sft_cw LEFT_SHIFT 0  &lt 1 SPACE  &kp ENTER  &lt 2 BACKSPACE
             >;
         };
 
         num {
             label = "NUM";
             bindings = <
-&kp TAB  &kp F7  &kp F8  &kp F9  &kp F12  &trans  &kp N7        &kp N8        &kp N9        &kp DELETE
-&trans   &kp F4  &kp F5  &kp F6  &kp F11  &trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans
-&trans   &kp F1  &kp F2  &kp F3  &kp F10  &kp N0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
-                         &trans  &trans   &kp N0  &trans
+&kp GRAVE  &kp F7  &kp F8  &kp F9  &kp F12  &trans  &kp N7        &kp N8        &kp N9        &kp DELETE
+&trans     &kp F4  &kp F5  &kp F6  &kp F11  &trans  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans
+&trans     &kp F1  &kp F2  &kp F3  &kp F10  &kp N0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
+                           &trans  &trans   &kp N0  &trans
             >;
         };
 
         sym {
             label = "SYM";
             bindings = <
-&kp LEFT_PARENTHESIS  &kp COLON     &kp EQUAL  &kp RIGHT_PARENTHESIS  &kp GRAVE      &kp EXCLAMATION  &kp AT_SIGN    &kp HASH      &kp DOLLAR  &kp PERCENT
-&kp LEFT_BRACE        &kp MINUS     &kp PLUS   &kp RIGHT_BRACE        &kp BACKSLASH  &kp CARET        &kp AMPERSAND  &kp ASTERISK  &kp PIPE    &kp TILDE
-&kp LEFT_BRACKET      &kp ASTERISK  &kp SLASH  &kp RIGHT_BRACKET      &kp SQT        &trans           &trans         &trans        &trans      &trans
-                                               &trans                 &trans         &trans           &trans
+&kp LEFT_PARENTHESIS  &kp COLON      &kp EQUAL  &kp RIGHT_PARENTHESIS  &kp GRAVE  &kp EXCLAMATION  &kp AT_SIGN    &kp HASH      &kp DOLLAR  &kp PERCENT
+&kp LEFT_BRACE        &kp MINUS      &kp PLUS   &kp RIGHT_BRACE        &kp PIPE   &kp CARET        &kp AMPERSAND  &kp ASTERISK  &kp PIPE    &kp SQT
+&kp LEFT_BRACKET      &kp BACKSLASH  &kp SLASH  &kp RIGHT_BRACKET      &kp TILDE  &trans           &trans         &trans        &trans      &trans
+                                                &trans                 &trans     &trans           &trans
             >;
         };
 
@@ -162,7 +167,7 @@
             bindings = <
 &bt BT_SEL 0       &bt BT_SEL 1     &bt BT_SEL 2  &bt BT_SEL 3  &out OUT_BLE  &trans    &kp HOME        &kp UP_ARROW  &kp END          &kp PRINTSCREEN
 &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &kp C_MUTE    &trans        &out OUT_USB  &trans    &kp LEFT_ARROW  &kp DOWN      &kp RIGHT_ARROW  &trans
-&bt BT_CLR_ALL     &trans           &trans        &trans        &sys_reset    &kp HOME  &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &trans
+&bt BT_CLR_ALL     &trans           &trans        &trans        &trans        &kp HOME  &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &trans
                                                   &trans        &trans        &trans    &trans
             >;
         };
