@@ -1,42 +1,22 @@
-# Copyright (c) 2025 The ZMK Contributors
-# SPDX-License-Identifier: MIT
-
-# --- COMMON SETTINGS ---
-if SHIELD_URCHIN_DONGLE || SHIELD_URCHIN_LEFT || SHIELD_URCHIN_LEFT_PERIPHERAL || SHIELD_URCHIN_RIGHT || SHIELD_ZENITH_RIGHT_PERIPHERAL
-    config ZMK_KEYBOARD_NAME
-        default "urchin"
-
-    config ZMK_SPLIT
-        default y
-endif
-
-# --- DONGLE ROLE (Central) ---
 if SHIELD_URCHIN_DONGLE
-    config ZMK_SPLIT_BLE_ROLE_CENTRAL
-        default y
-    config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
-        default 2
-    config BT_MAX_CONN
-        default 6
-    config BT_MAX_PAIRED
-        default 6
-    config ZMK_USB
-        default y
+
+config ZMK_KEYBOARD_NAME
+    default "Urchin"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_USB
+    default y
+
 endif
 
-# --- LEFT SIDE ROLE (Central in standard, Peripheral in dongle) ---
-if SHIELD_URCHIN_LEFT
-    config ZMK_SPLIT_BLE_ROLE_CENTRAL
-        default y
-endif
+if SHIELD_URCHIN_LEFT || SHIELD_URCHIN_RIGHT || SHIELD_URCHIN_DONGLE
 
-if SHIELD_URCHIN_LEFT_PERIPHERAL
-    config ZMK_SPLIT_BLE_ROLE_CENTRAL
-        default n
-endif
+config ZMK_SPLIT
+    default y
 
-# --- RIGHT SIDE ROLE (Always Peripheral) ---
-if SHIELD_URCHIN_RIGHT || SHIELD_ZENITH_RIGHT_PERIPHERAL
-    config ZMK_SPLIT_BLE_ROLE_CENTRAL
-        default n
+config ZMK_BLE
+    default y
+
 endif
